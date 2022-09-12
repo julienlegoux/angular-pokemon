@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+.name {
+    text-align: center;
+    font-weight: bold;
+}
+
+.dateInfo {
+    text-align: right;
+}

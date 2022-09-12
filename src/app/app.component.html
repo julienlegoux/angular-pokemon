@@ -1,21 +1,23 @@
-<h1>Liste de pokémons</h1>
-<input
-        #input
-        (keydown.enter)="selectPokemon(input.value)"
-        type="number"
->
+<h1 xmlns="http://www.w3.org/1999/html" class="center">Liste de pokémons</h1>
 
-<p *ngIf="pokemonSelected">Vous avez selectionné le pokémon : {{ pokemonSelected.name }}</p>
-<p *ngIf="!pokemonSelected">Aucun pokémon n'a été selecté !</p>
-<p>{{ pokemonList[0].name}}</p>
-<p>{{ pokemonList[1].name}}</p>
-<p>{{ pokemonList[2].name}}</p>
-<p>{{ pokemonList[3].name}}</p>
-<p>{{ pokemonList[4].name}}</p>
-<p>{{ pokemonList[5].name}}</p>
-<p>{{ pokemonList[6].name}}</p>
-<p>{{ pokemonList[7].name}}</p>
-<p>{{ pokemonList[8].name}}</p>
-<p>{{ pokemonList[9].name}}</p>
-<p>{{ pokemonList[10].name}}</p>
-<p>{{ pokemonList[11].name}}</p>
+<div>
+    <div class="row">
+        <input
+            #input
+            (keydown.enter)="selectPokemon(input.value)"
+            type="number"
+            class="col s1 offset-s4"
+        >
+
+        <p *ngIf="pokemonSelected" class="col s2 offset-s1">Vous avez selectionné le pokémon : {{ pokemonSelected.name }}</p>
+
+        <p *ngIf="!pokemonSelected" class="col s2 offset-s1">Aucun pokémon n'a été selecté !</p>
+    </div>
+    <div class="row">
+        <p *ngFor="let pokemon of pokemonList" class="col s3 offset-s1 row z-depth-4">
+            <img src="{{ pokemon.picture}}" alt="" class="col s6">
+            <span class="name col s3 offset-s1">{{ pokemon.name}}</span>
+            <span class="dateInfo col s4 offset-s2">{{ pokemon.created}}</span>
+        </p>
+    </div>
+</div>
