@@ -1,8 +1,10 @@
-.name {
+.title {
     text-align: center;
     font-weight: bold;
+    color: #C04000;
+    font-size: larger;
 }
-
-.dateInfo {
-    text-align: right;
+.h1 {
+    font-weight: bold;
+    color: #7B1818;
 }
